@@ -1,0 +1,306 @@
+<style>
+      * {
+            margin: 0;
+            padding: 0;
+      }
+      
+      body {
+            background-color: #add8e6;
+            height: 100hv;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+      
+      }
+      
+      .cartbox {
+            width:300px;
+            background-color: #36454f;
+            margin-top: 50px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            border-style: solid;
+            border-color: white;
+      }
+      
+      .cartbox h2 {
+            color: white;
+            margin-bottom: 20px;
+            
+      
+      }
+      
+      .cartbox h3 {
+            color: white;
+            margin-top: 10px;
+      
+      }
+      
+      button {
+            margin-top: 40px;
+            padding: 10px 30px;
+            border:none;
+            background-color: #36454f;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            border-style: solid;
+            border-color: white;
+      }
+      
+      .cartbox ul {
+            list-style-type: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 20px;
+      }
+      
+      
+      @media all and (max-width:600px) {
+            .cartbox{
+                  width: 250px;
+                  padding: 10px 20px;
+                  align-self: self-start;
+                  margin-left: 10px;
+            }
+      
+            button {
+                  align-self: self-start;
+                  margin-left: 10px;
+            }
+      
+            .cartbox ul {
+                  display: block;
+            }
+      
+            
+      }
+
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      
+</head>
+<body>
+
+      <nav class="header">
+            <div class="headerlogo"> 
+                  <img class="imageheaderlogo" src="images/logobg.png" alt="logo">
+            </div>
+
+            <div class="menu"></div>
+            
+
+            <ul class="webmenu">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="Menu.html">Menu</a></li>
+                  <li><a href="prebook.html">Pre-Booking</a></li>
+                  <li><a href="aboutus.html">About us</a></li>
+                  <li><a href='feedback.html'>Feedback</a></li>
+            </ul>
+
+            <div class="menubar">
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+            </div>
+            
+      </nav> 
+
+      <div class="cartbox">
+            <h2> Your Cart</h2>
+            <ul id="cart"></ul>
+            <h3>Total: Rs.<span id="total-price">0</span></h3>  
+      </div>
+
+      <button onclick="makePayment()">Make Payment</button>
+
+
+
+      
+</body>
+</html>
+
+<script src="card.js"></script>
+
+<script>
+      const menu= document.querySelector ('.menubar')
+      const menuList= document.querySelector('nav ul')
+      menu.addEventListener('click',()=>{
+            menuList.classList.toggle('showmenu')
+      })
+</script>
+
+    

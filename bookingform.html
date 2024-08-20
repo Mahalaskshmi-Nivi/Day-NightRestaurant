@@ -1,0 +1,355 @@
+<style>
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+
+      * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+      }
+      
+      body {
+            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+            min-width: 100hv;
+            align-items: center;
+            justify-content: center;
+            
+      }
+      
+      .wrapper {
+            margin-top: 50px ;
+            width: 500px;
+            background-color: #36454f;
+            border-radius: 10px;
+            color: #fff;
+            padding: 30px 45px;
+            
+      }
+      
+      .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+      }
+      
+      .wrapper .input-box {
+            display: flex;
+            flex-direction: column;            
+      }
+      
+      .wrapper p {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            color: black
+      }
+      
+      .input-field input{
+            background-color: lightblue;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-style: solid;
+            border-color: rgb(0, 102, 255);
+            font-size: 14px;
+            color:rgb(0, 102, 255) ;
+      }
+      .input-field input::placeholder {
+            color: rgb(0, 102, 255);
+      }
+      
+      .input-div {
+            margin-bottom: 35px;
+            
+      }
+      
+      .input-div span {
+            color: black;
+            font-size: 16px;
+            font-weight: 600;
+            margin-right: 20px;
+      }
+      
+      .input-div a {
+            background-color: lightblue;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 12px;
+            border-style: solid;
+            border-color: rgb(0,102,255);
+            border-width: 2px;
+            color: rgb(0,102,255);
+      }
+      
+      @media all and (max-width:600px) {
+            .wrapper {
+                  width: 300px;
+            }
+      }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bookingform</title>
+</head>
+<body>
+      <nav class="header">
+            <div class="headerlogo"> 
+                  <img class="imageheaderlogo" src="images/logobg.png" alt="logo">
+            </div>
+
+            <div class="menu"></div>
+            
+
+            <ul class="webmenu">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="Menu.html">Menu</a></li>
+                  <li><a href="prebook.html">Pre-Booking</a></li>
+                  <li><a href="aboutus.html">About us</a></li>
+                  <li><a href='feedback.html'>Feedback</a></li>
+            </ul>
+
+            <div class="menubar">
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+            </div>
+            
+      </nav>
+
+
+
+      <div class="wrapper">
+            <form action="">
+                  <h1>Pre-Booking</h1>
+                  <div class="input-box">
+                        <div class="input-field">
+                              <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="input-field">
+                              <input type="text" placeholder="Contact No" required>
+                        </div>
+                  </div>
+
+                  <div class="input-box">
+                        <div class="input-field">
+                              <input type="text" placeholder="Date" required>
+                        </div>
+
+                        <div class="input-field">
+                              <input type="text" placeholder="Time" required>
+                        </div>
+                  </div>
+
+                  
+                  <p>Type of Dining</p>
+                  <div class="input-box">
+                        
+                        <div class="input-field">
+                              <input type="radio" name="Dining Type" value="Serene Spot" >Serene Spot
+                              <input type="radio" name="Dining Type" value="Social Corner" >Socail Corner
+                              <input type="radio" name="Dining Type" value="Family Haven" >Family Haven
+                        </div>
+                  </div>
+                  <p>Any Speical Theme or Food</p>
+                  <div class="input-box">
+                        <div class="input-field">
+                              <div class="input-field">
+                                    <input type="radio" name="Theme" value="Yes">Yes
+                                    <input type="radio" name=Theme value="No" >No
+                              </div>
+                        </div>      
+                  </div>
+                
+                  <div class="input-box">
+                        <div class="input-div"><span>Select Food</span><a href="">Menu</a></div>
+                  </div>
+
+                  <div class="input-box">
+                        <div class="input-div"><a href="">Payment</a></div>
+                  </div>
+                  <div class="input-box">
+                        <div class="input-div"><a href="">Confrim Booking</a></div>
+                  </div>
+            </form>
+      </div>
+
+</body>
+</html>
+
+<script>
+      const menu= document.querySelector ('.menubar')
+      const menuList= document.querySelector('nav ul')
+      menu.addEventListener('click',()=>{
+            menuList.classList.toggle('showmenu')
+      })
+</script>

@@ -1,0 +1,487 @@
+<style>
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+
+      body {
+            margin: 0;
+            padding: 0;
+      
+      }
+      
+      .background {
+            min-height: 100vh;
+            display: block;
+            position: relative;
+      }
+      .background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-image: url("images/feedbackbg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            z-index: -1;
+      
+      }
+      
+      .feedback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+      }
+      
+      .feedback h3 {
+            font-size: 35px;
+            font-family: 'Times New Roman', Times, serif;
+      }
+      
+      .feedback p {
+            width: 520px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            font-weight: bold;
+      }
+      
+      .feedbackbox {
+            place-items:center;
+            text-align: center;
+            display: grid;
+      }
+      
+      .container {
+            position: relative;
+            width: 400px;
+            background: #36454f;
+            padding: 20px 30px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+      }
+      
+      .container .post {
+            display: none;
+      }
+      
+      .container .text {
+            font-size: 25px;
+            color: black;
+            font-weight: 500;
+      }
+      
+      .container .edit {
+            position: absolute;
+            top:5px;
+            right: 10px;
+            font-size: 16px;
+            color: black;
+            font-weight: 500;
+            cursor: pointer;
+      
+      }
+      
+      .container .edit :hover {
+            text-decoration: underline;
+      }
+      
+      .container .star-widget input {
+            display: none;
+      }
+      
+      .star-widget label{
+            font-size: 40px;
+            color:white;
+            z-index: 100;
+            padding: 10px;
+            float: right;
+            transition: all 0.2s ease;
+      }
+      
+      input:not(:checked) ~ label:hover,
+      input:not(:checked) ~ label:hover~label {
+            color:#fd4;
+      }
+      
+      input:checked ~ label {
+            color:#fd4
+      }
+      input#rate-5:checked~ label {
+            color: #f67;
+            text-shadow: 0 0 20px #952;
+      }
+      
+      #rate-1:checked ~ form header:before {
+            content:"I Just Hate it 😠";
+      }
+      
+      #rate-2:checked ~ form header:before {
+            content:"Not Good At All 😑";
+      }
+      
+      #rate-3:checked ~ form header:before {
+            content:"Impressive 😌";
+      }
+      
+      #rate-4:checked ~ form header:before {
+            content:"It was Awesome ✨";
+      }
+      
+      #rate-5:checked ~ form header:before {
+            content:"Out of this world 🤩";
+      }
+      
+      .container form {
+            display: none;
+      }
+      
+      input:checked ~ form {
+            display: block;
+      }
+      form header {
+            width: 100%;
+            font-size: 25px;
+            color: #fe7;
+            font-weight: 500;
+            margin: 5px 0 20px 0;
+            text-align: center;
+            transition: all 0.2s ease;
+      }
+      
+      
+      form .textarea {
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+      }
+      
+      form .textarea textarea {
+            height: 100px;
+            width: 100%;
+            outline: none;
+            color: #eee;
+            border: 1px solid #333;
+            background: lightgray;
+            padding: 10px;
+            font-size: 15px;
+            resize: none;
+      }
+      
+      form .btn {
+            height: 45px;
+            width: 100%;
+            margin: 15px 0;
+      }
+      
+      form .btn button {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: #999;
+            border: 1px solid #444;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3 ease;
+      }
+      
+      
+      form .btn button:hover {
+            background: #1b1b1b;
+      }
+      
+      @media all and (max-width:600px) {
+            .feedback p {
+                  width: 340px;
+            }
+            
+            
+            .container {
+                  width: 280px;
+            }
+      
+            .star-widget label{
+                  font-size: 20px;
+                  float: none;
+            }
+            
+            
+      
+      }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Feedback</title>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      
+</head>
+<body>
+      <div class="background">
+
+            <nav class="header">
+                  <div class="headerlogo"> 
+                        <img class="imageheaderlogo" src="images/logobg.png" alt="logo">
+                  </div>
+      
+                  <div class="menu"></div>
+                  
+      
+                  <ul class="webmenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Menu.html">Menu</a></li>
+                        <li><a href="prebook.html">Pre-Booking</a></li>
+                        <li><a href="aboutus.html">About us</a></li>
+                        <li><a href='feedback.html'>Feedback</a></li>
+                  </ul>
+      
+                  <div class="menubar">
+                        <div class="menu-line"></div>
+                        <div class="menu-line"></div>
+                        <div class="menu-line"></div>
+                  </div>
+                  
+            </nav>
+      
+            <div class="feedback">
+                  <h3>FEEDBACK</h3>
+                  <p>"Feedback is a powerful tool for growth,guiding us to refine
+                        our strengths and address our weaknesses.Embracing feedback
+                        is essential for continuous improvement and success."
+                  </p>
+            </div>
+
+            <div class="feedbackbox">
+                  <div class="container">
+                        <div class="post">
+                              <div class="text">Thanks for Sharing Your Opinion</div>
+                              <div class="edit">EDIT</div>
+                        </div>
+                        
+                        <div class="star-widget">
+                              <input type="radio" name="rate" id="rate-5">
+                              <label for="rate-5"><ion-icon name="star"></ion-icon></label>
+                              <input type="radio" name="rate" id="rate-4">
+                              <label for="rate-4" ><ion-icon name="star"></ion-icon></label>
+                              <input type="radio" name="rate" id="rate-3">
+                              <label for="rate-3" ><ion-icon name="star"></ion-icon></label>
+                              <input type="radio" name="rate" id="rate-2">
+                              <label for="rate-2" ><ion-icon name="star"></ion-icon></label>
+                              <input type="radio" name="rate" id="rate-1">
+                              <label for="rate-1" ><ion-icon name="star"></ion-icon></label>
+                              <form action="#">
+                                    <header></header>
+                                    <div class="textarea">
+                                          <textarea cols="30" placeholder="We'd really value your opinion"></textarea>
+                                    </div>
+                                    <div class="btn">
+                                          <button type="submit">Post</button>
+                                    </div>
+                              </form>
+                       
+                        </div>
+                  </div>
+            </div>
+            
+            
+      </div>
+      
+</body>
+</html>
+
+<script>
+      const menu= document.querySelector ('.menubar')
+      const menuList= document.querySelector('nav ul')
+      menu.addEventListener('click',()=>{
+            menuList.classList.toggle('showmenu')
+      })
+      const btn =document.querySelector("button");
+      const post=document.querySelector(".post");
+      const widget = document.querySelector(".star-widget");
+      const editBtn = document.querySelector(".edit");
+
+      btn.onclick = () =>{
+            widget.style.display = "none";
+            post.style.display = "block";
+            editBtn.onclick =()=>{
+                  widget.style.display="block";
+                  post.style.display="none"
+            }
+            return false;
+      }
+</script>

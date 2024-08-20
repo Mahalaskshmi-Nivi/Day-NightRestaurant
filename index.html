@@ -1,0 +1,369 @@
+<style>
+      body {
+            margin: 0;
+            padding: 0;
+      }
+      
+      #homebg {
+            background-image: url("images/homebg1.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            
+      }
+      
+      
+      .namecontainer {
+            max-width:1000px;
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;;
+            margin: auto;  
+            margin-top: 100px;
+            z-index: 0;
+      }
+      
+      .logonamebox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+      
+      } 
+      
+      
+      
+      .name {      
+            font-family: "Abril Fatface", serif;
+            font-weight: 700;
+            font-size: 100px;
+            margin-bottom: 0;
+            background: linear-gradient(to right,#de3e09,rgb(98, 2, 109));
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 0;
+      }
+      
+      .subname {
+            font-family: "Abril Fatface", serif;
+            font-weight: 700;
+            color:white;
+            font-size: 50px;
+            margin-top: 0;
+            margin-bottom: 0;
+           
+           
+      }
+      
+      .slogan {
+            font-family: Georgia,serif;
+            font-size: 25px;
+            font-weight: 500px;
+            color: rgb(7, 4, 1);
+            margin-top: 0;
+      }
+      
+      .logo {
+            height: 14vh;
+            margin-bottom: 0;
+            border: none;
+            border-radius: 100px;
+            margin-right: 10px;
+      }
+      
+      .footer {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 40px;
+      
+      }
+      
+      .footer ul {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-around;
+            padding: 10px 10px;
+            list-style: none;
+      
+      }
+         
+      .footer a {
+            margin: 10px 15px;
+            font-size: 35px;
+            color: black;
+            z-index: 200;
+      } 
+      
+      .footer a:hover {
+            font-size: 45px;
+            color: lightgoldenrodyellow;
+      }
+      
+      
+      
+      @media all and (max-width:600px){
+            .name{
+                  font-size: 60px;
+            }
+      
+            .subname{
+                  font-size: 40px;
+            }
+            .slogan {
+                  font-size: 30px;
+            }
+      }
+      
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+
+
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>home</title>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+      <div id="homebg">
+            <nav class="header">
+                  <div class="headerlogo"> 
+                        <img class="imageheaderlogo" src="images/logobg.png" alt="logo">
+                  </div>
+
+                  <div class="menu"></div>
+                  
+
+                  <ul class="webmenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Menu.html">Menu</a></li>
+                        <li><a href="prebook.html">Pre-Booking</a></li>
+                        <li><a href="aboutus.html">About us</a></li>
+                        <li><a href='feedback.html'>Feedback</a></li>
+                  </ul>
+
+                  <div class="menubar">
+                        <div class="menu-line"></div>
+                        <div class="menu-line"></div>
+                        <div class="menu-line"></div>
+                  </div>
+                  
+            </nav>
+            
+
+            
+            <div class="namecontainer">
+                  <div class="logonamebox">
+                        <img  class="logo" src="images/logobg.png">
+                        <h1 class="name">DAY & NIGHT</h1>
+                  </div>
+                  <h3 class="subname">RESTAURANT</h3>
+                  <div class="slogan">Feel The Taste Every Day</div>
+            </div>
+     
+
+           <div class="footer">
+                  <ul>
+                        <li><a href=""><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-instagram"></ion-icon></a></li>
+                  </ul>
+            </div>
+      </div>
+      
+      
+</body>
+</html>
+
+<script>
+      const menu= document.querySelector ('.menubar')
+      const menuList= document.querySelector('nav ul')
+      menu.addEventListener('click',()=>{
+            menuList.classList.toggle('showmenu')
+      })
+</script>
+

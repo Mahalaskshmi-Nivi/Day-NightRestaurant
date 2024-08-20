@@ -1,0 +1,479 @@
+<style>
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+
+      body {
+            margin: 0;
+            padding: 0;
+            background-color: #add8E6;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: auto;
+            width: 100%;      
+      }
+      
+      .aboutpage {
+            display: flex;
+            justify-content: center;
+      
+      }
+      
+      .container {
+            flex: 2;
+            position: relative;
+            width: 100%;
+            height: 100hv;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+      
+      }
+      
+      .aboutimage {
+            position: relative;
+            top: 0;
+            width: 500px;
+            height: 400px;
+            background-color: red;
+            background-image: url("images/aboutpic.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+      }
+      
+      .aboutimage::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 52.2%;
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            border-radius: 50%;
+            box-shadow: -10px 10px 0 #add8E6;
+      }
+      
+      .aboutimage::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 18%;
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            border-radius: 50%;
+            box-shadow: -10px 10px 0 #add8E6;
+      }
+      
+      .contactbox {
+            position: relative;
+            width: 500px;
+            height: 240px;
+            background-color: #36454f;
+            border-radius: 15px;
+            border-top-left-radius: 0;
+            margin-top: 12px ;
+      }
+      
+      .contact {
+            position: absolute;
+            top: -90px ;
+            height: 78px;
+            width: 50%;
+            background: #36454f;
+            border-top:12px solid #add8E6;
+            border-right: 12px solid #add8E6;
+            border-top-right-radius: 25px;
+      }
+      .contact::before{
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background:transparent;
+            border-radius: 50%;
+            box-shadow: -10px -10px 0 #add8E6;
+      
+      }
+      
+      .contact::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: -25px;
+            width: 25px;
+            height: 25px;
+            background: transparent;
+            border-radius: 50%;
+            box-shadow: -10px 10px 0 #36454f;
+      
+      }
+      .aboutbox {
+            flex:3;
+            margin-right: 10px;
+            align-self: center;
+      }
+      
+      .title {
+            position: relative;
+            background: whitesmoke;
+            top: 15px;
+            border: none;
+            border-radius: 8px; 
+            padding: 10px 15px;
+            margin-left: 20px;
+            color: #36454f;
+            font-family: sans-serif,Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 15px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+      }
+      
+      .address p {
+            margin-left: 20px;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            color: whitesmoke;
+      }
+      
+      .address {
+            margin-top: 30px;
+      }
+      
+      .aboutbox p{
+      
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            font-weight: bold;
+            
+      }
+      
+      .aboutbox h3 {
+            color: #36454f;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+            font-weight: bolder;
+      
+      }
+      
+      @media all and (max-width:1100px) {
+            body {
+                  margin-left: 0;
+                  margin-right: 0;
+                  padding: 0;
+            }
+            .aboutpage {
+                  flex-direction: column;
+            }
+      
+      
+            .aboutbox {
+                  margin-left: 20px;
+                  margin-right: 0;
+                  
+            }
+      
+      }
+      
+      @media all and (max-width:600px) {
+          
+      
+            body{
+                  
+                  padding: 0;
+                  margin: 0;
+            }
+                
+            
+            .container {
+                  padding: 0;
+            }
+            
+            .aboutimage {
+                  width: 320px;
+            }
+            .contactbox {
+                  
+                  width: 320px;
+            }
+      
+            .address p{
+                  font-size: 12px;
+                  font-weight: bold;
+            }
+            
+            .aboutbox {
+                  margin-right: 0;
+                  margin-left: 8px;
+                  flex: auto;
+            }
+            
+      }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About Us</title>
+      
+</head>
+<body>   
+
+      <div>
+            <nav class="header">
+                  <div class="headerlogo"> 
+                        <img class="imageheaderlogo" src="images/logobg.png" alt="logo">
+                  </div>
+
+                  <div class="menu"></div>
+                  
+
+                  <ul class="webmenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Menu.html">Menu</a></li>
+                        <li><a href="prebook.html">Pre-Booking</a></li>
+                        <li><a href="aboutus.html">About us</a></li>
+                        <li><a href='feedback.html'>Feedback</a></li>
+                  </ul>
+
+                  <div class="menubar">
+                        <div class="menu-line"></div>
+                        <div class="menu-line"></div>
+                        <div class="menu-line"></div>
+                  </div>
+                  
+            </nav>
+      </div>
+
+      
+      <div class="aboutpage"> 
+            <div class="container">
+                  <div class="aboutimage"></div>
+                  <div class="contactbox">
+                        <div class="contact">
+                              <button class="title">Contact Us</button>
+
+                              <div class="address">
+                                    <p>Day & Night restaurant</p>
+                                    <p>1234 Culinary Avenue</p>
+                                    <p>Gourment City, FL 56789</p>
+                                    <p>United states</p>
+                                    <p>Phone:(123) 456-7890</p>
+                                    <P>Email:Day&NightRestaurant@gmail.com</P>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <div class="aboutbox">
+                        
+                  <h3>About us</h3>
+                  <p>Welcome to Day & Night, Our restaurant is dedicated to providing you
+                        witha delightful dining experience, whether you're joining us for a sunny
+                        brunch or a cozy dinner under the stars.
+                  </p> 
+
+                  <p>
+                        At Day &  Night, we believe in the magic of good food and great 
+                        company. Our menu is crafted with care, featuirng a diverse range of
+                        dishes that cater to all tastes and preferences. From hearty breakfasts
+                        to sumptuous dinners, our chefs use the freshest ingredients to create
+                        meals that will tantalize your taste buds.
+                  </p>
+
+                  <div class="ourstory">
+                        <h3>Our Story</h3>
+                        <p>Day & Night was born out of a passion for bringing
+                              people together through the love of food. we wanted
+                              to create a place where you can relax, enjoy, and savor 
+                              every moment, whether you're dining solo,with family or freinds.
+                              Our mission is to provide a welcoming atmosphere that feels like
+                              home, no matter what time of day you visit.
+                        </p>
+      
+                        <p>We love to hear from our customers! whether you have
+                              a question, a suggestion, or just want to say hello,
+                              feel free to reach out to us.
+                        </p>
+                  </div>    
+            </div>
+      
+      </div>
+</body>
+</html>
+
+<script>
+      const menu= document.querySelector ('.menubar')
+      const menuList= document.querySelector('nav ul')
+      menu.addEventListener('click',()=>{
+            menuList.classList.toggle('showmenu')
+      })
+</script>

@@ -1,0 +1,313 @@
+<style>
+      body {
+            padding: 0;
+            margin: 0;
+            background-color: lightblue;
+            min-height: 100hv;
+      }
+      
+      .contentbox {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            
+            
+      }
+      
+      .contentbox h3{
+            width: 200px;
+            align-self: flex-start;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            background-color: #36454f;
+            color: white;
+            text-decoration: underline;
+            margin-bottom: 0;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-radius: 22px;
+      }
+      
+      .contentbox p {
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            width: 600px;
+            text-align: justify;
+            
+      }
+      
+      .contentbox strong {
+            text-decoration:underline;
+            font-size: 20px;
+            color: #36454f;
+      }
+      
+      .nextbox a{
+            text-decoration: none;
+            background-color: #36454f;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            
+      }
+      
+      .nextbox a:hover{
+      
+            background-color: white;
+            color:#36454f;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+            
+      }
+      
+      .nextbox {
+            margin-left: 450px;
+            margin-top: 10px;
+      }
+      
+      @media all and (max-width:800px) {
+            .contentbox {
+                  margin-left: 10px;
+            }
+            .contentbox p {
+                  width: 300px;
+            }
+      
+            .nextbox {
+                  margin-left: 250px;
+                  margin-bottom: 10px;
+            }
+      }
+
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>bookingpolicy</title>
+      
+</head>
+<body>
+      <nav class="header">
+            <div class="headerlogo"> 
+                  <img class="imageheaderlogo" src="images/logobg.png" alt="logo">
+            </div>
+
+            <div class="menu"></div>
+            
+
+            <ul class="webmenu">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="Menu.html">Menu</a></li>
+                  <li><a href="prebook.html">Pre-Booking</a></li>
+                  <li><a href="aboutus.html">About us</a></li>
+                  <li><a href='feedback.html'>Feedback</a></li>
+            </ul>
+
+            <div class="menubar">
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+            </div>
+            
+      </nav>
+
+      <div class="contentbox">
+            <h3>Customizable Menu</h3>
+            <p><strong>Serene Spot:</strong> Customers can choose one strater,two main dishes,two side dishes,one dessert and two drinks from our menu.<br> 
+               <strong>Soical corner:</strong> Customers can choose two strater,four main disdes,four side dishes,two dessert and four drinks from our menu.<br>
+               <strong>Family Haven:</strong> Customers can choose four strater,five main disdes,five side dishes,four dessert and five drinks from our menu.<br>
+               <strong>NOTE:</strong> Any additional itemsor speical requests outside the standard menu will incur extra charges
+            </p>
+            <h3>Dining Theme</h3>
+            <p>You have the option to design a custom dining theme,such as speical decorations or ambiance adjustment. This service is available at
+                  an additional cost </p>
+            <h3>Cancellation Policy</h3>
+            <p>Cancellation can be made up to seven hours before the booking time without any penalty. Cancellation made within seven hours will incur a cancellation fee.</p>
+
+            <div class="nextbox">
+                  <a href="bookingform.html">Continue</a>
+            </div>
+      </div>
+
+</body>
+</html>
+
+<script>
+      const menu= document.querySelector ('.menubar')
+      const menuList= document.querySelector('nav ul')
+      menu.addEventListener('click',()=>{
+            menuList.classList.toggle('showmenu')
+      })
+</script>

@@ -1,0 +1,627 @@
+<style>
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+
+      * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+      }
+      
+      body {
+            background-color: lightblue;
+            min-height: 100hv;
+      }
+      
+      
+      
+      .container {
+            height: 100hv;
+            margin-inline: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+      
+      }
+      
+      .card {
+            position: relative;
+            width:260px ;
+            background-color: #36454f;
+            padding: 1.25rem 2rem 2rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 16px hsla(29,75%,8% .2);
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-right: 30px;
+      }
+      
+      .card_img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 0;
+      }
+      
+      .card_border {
+            width:190px ;
+            height: 190px;
+            border: 4px solid white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 4px;
+      }
+      
+      .card_name {
+            color: white;
+            font-weight: 600;
+            margin-top: 0;
+      }
+      
+      .card_item {
+            width: 220px;
+            background-color: white;
+            padding: .25rem;
+            border-radius: 3rem;
+            text-align: initial;
+            box-shadow: 0 8px 24px hsla (29,75%,56%,.3);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1.75rem;
+            margin: 0 auto;
+      }
+      
+      .button {
+            position: relative;
+      }
+      
+      .addbt {
+            display: inline-flex;
+            background-color:#36454f;
+            font-size: 1.25rem;
+            padding: .5rem .8rem;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            font-weight: 700;
+            z-index: 10;
+            margin-left: 5px;
+            color: white;
+      }
+      
+      .subbt {
+            display: inline-flex;
+            background-color: #36454f;
+            font-size: 1.75rem;
+            font-weight: 700;
+            padding: .2rem  .9rem;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            z-index: 10;
+            color: white;
+      }
+      
+      span {
+            margin-left: 30px;
+            margin-right: 30px;
+            font-size: 20px;
+            font-weight: 900;
+            color: #36454f;
+      }
+      
+      .cart a {
+            text-decoration: none;
+            margin-left: 50px;
+            background-color: #36454f;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border-style: solid;
+            border-color: white;
+            color:white ;
+            font-size: 14px;
+      }
+      
+      @media all and (max-width:1100px) {
+            .container {
+                  flex-direction: column;
+            }
+      
+            .card {
+                  margin-bottom: 45px;
+                 
+            }
+      }
+
+      .header {
+            background-color:  #36454f;
+            width:100%;
+            height: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: sticky;
+      }
+      
+      .imageheaderlogo {
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+      }
+      
+      nav li {
+            display: inline-block;
+            margin: 0 8px;
+      }
+          
+      nav a {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: serif, sans-serif;
+            color: white;
+            margin-left: 8px;
+            padding: 10px;
+            transition: 0.3s;
+            
+      }
+      
+      nav a:hover {
+            border: none;
+            border-radius: 20px;
+            background-color: #4a5b67;
+      }
+      
+      .menu-line {
+            height: 2px;
+            width: 20px;
+            background-color: white;
+            margin-bottom: 3px;
+      }
+      
+      .menubar {
+            cursor:pointer;
+            display: none;
+            
+      }
+      
+      @media all and (max-width:600px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+                  
+                  
+            }
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+            }
+      
+            
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      }
+      
+      @media all and (max-width:1000px){
+            nav {
+                  flex-direction: column;
+                  
+            
+            }
+      
+            body {
+                  max-width: 100%;
+            }
+            .header {
+                  z-index: 100;
+            }
+      
+            nav li {
+                  display:block;
+                  padding:  15px 0;
+                  background-color: #36454f;
+                  width: 200px;
+                  position: relative;
+                  top: -21px;
+                  left: 9px;;
+            
+                  
+            }
+            
+            ul {
+                  text-align: center;
+                  align-self: flex-end;
+                  display: none;
+                  
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .headerlogo {
+                  align-self:flex-start;
+                  margin:10px 0px 0px 30px;
+            }
+      
+            .menubar {
+                  display: block;
+                  position: absolute;
+                  right: 20px;
+                  top: 25px;
+            }
+      
+            .showmenu {
+                  display: block;
+            }
+      
+      }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Starter</title>
+</head>
+<body>
+
+      <nav class="header">
+            <div class="headerlogo"> 
+                  <img class="imageheaderlogo" src="images/logobg.png" alt="logo">
+            </div>
+
+            <div class="menu"></div>
+            
+
+            <ul class="webmenu">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="Menu.html">Menu</a></li>
+                  <li><a href="prebook.html">Pre-Booking</a></li>
+                  <li><a href="aboutus.html">About us</a></li>
+                  <li><a href='feedback.html'>Feedback</a></li>
+            </ul>
+
+            <div class="menubar">
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+            </div>
+            
+      </nav> 
+
+      <div class="container">
+
+
+            <div class="card">
+                  <div class="card_border">
+                        <img src="images/chickpic.jpg" class="card_img">
+      
+                  </div>
+                  <h3 class="card_name">SPICY CHICKEN</h3>
+                  <div class="card_item">
+                        <div class="button">
+                              <div class="addbt" onclick="addToCart('Spicy chihcken',450)">+</div>
+                              <span>Rs 450</span>
+                              <div class="subbt" onclick="removeFromCart('Spicy chicken')">-</div>
+                        </div>
+                  </div>
+            </div>
+            
+            <div class="card">
+                  <div class="card_border">
+                        <img src="images/firedchicken.jpg" class="card_img">
+      
+                  </div>
+                  <h3 class="card_name">FIRED CHICKEN</h3>
+                  <div class="card_item">
+                        <div class="button">
+                              <div class="addbt" onclick="addToCart('Fried chicken',400)">+</div>
+                              <span>Rs 400</span>
+                              <div class="subbt" onclick="removeFromCart('Fried Chicken')">-</div>
+                        </div>
+                  </div>
+            </div>
+            <div class="card">
+                  <div class="card_border">
+                        <img src="images/shrimppic.jpg" class="card_img">
+      
+                  </div>
+                  <h3 class="card_name">BUTTER SHRIMP</h3>
+                  <div class="card_item">
+                        <div class="button">
+                              <div class="addbt" onclick="addToCart('Butter shrimp',600)">+</div>
+                              <span>Rs 600</span>
+                              <div class="subbt" onclick="removeFromCart('Butter shrimp')">-</div>
+                        </div>
+                  </div>
+            </div>
+            
+            <div class="card">
+                  <div class="card_border">
+                        <img src="images/fishfry.jpg" class="card_img">
+      
+                  </div>
+                  <h3 class="card_name">MASALA FISH</h3>
+                  <div class="card_item">
+                        <div class="button">
+                              <div class="addbt" onclick="addToCart('Masala Fish',550)">+</div>
+                              <span>Rs 550</span>
+                              <div class="subbt" onclick="removeFromCart('Masala Fish')">-</div>
+                        </div>
+                  </div>
+            </div> 
+            
+      </div>
+
+      <div class="container">
+
+            <div class="card">
+                  <div class="card_border">
+                        <img src="images/friespic.jpg" class="card_img">
+      
+                  </div>
+                  <h3 class="card_name">FRENCH FIRES</h3>
+                  <div class="card_item">
+                        <div class="button">
+                              <div class="addbt" onclick="addToCart('French Fries',200)">+</div>
+                              <span>Rs 200</span>
+                              <div class="subbt" onclick="removeFromCart('French Fries')">-</div>
+                        </div>
+                  </div>
+            </div>
+
+            <div class="card">
+                  <div class="card_border">
+                        <img src="images/babycorn.jpg" class="card_img">
+      
+                  </div>
+                  <h3 class="card_name">CORN MANCHURIAN</h3>
+                  <div class="card_item">
+                        <div class="button">
+                              <div class="addbt" onclick="addToCart('Corn Manchurian',250)">+</div>
+                              <span>Rs 250</span>
+                              <div class="subbt" onclick="removeFromCart('Corn Manchurian')">-</div>
+                        </div>
+                  </div>
+            </div>
+            
+            <div class="card">
+                  <div class="card_border">
+                        <img src="images/paneerpic.jpg" class="card_img">
+      
+                  </div>
+                  <h3 class="card_name">GRILLED PANEER</h3>
+                  <div class="card_item">
+                        <div class="button">
+                              <div class="addbt" onclick="addToCart('Grilled Paneer',350)">+</div>
+                              <span>Rs 350</span>
+                              <div class="subbt" onclick="removeFromCart('Grilled Paneer')">-</div>
+                        </div>
+                  </div>
+            </div> 
+
+      </div>
+      
+      <div class="cart"><a href="cart.html">Your Cart</a></div>
+
+</body>
+</html>
+
+<script src="card.js"></script>
+
+<script>
+      const menu= document.querySelector ('.menubar')
+      const menuList= document.querySelector('nav ul')
+      menu.addEventListener('click',()=>{
+            menuList.classList.toggle('showmenu')
+      })
+</script>
+
